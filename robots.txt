@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Mencegah bot mengindeks halaman transaksi/akun (Penting untuk toko online/F&B)
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /login/
+Disallow: /register/
+
+# Mencegah bot masuk ke backend
+Disallow: /api/
+Disallow: /admin/
+
+# Pastikan folder gambar terbuka lebar! (Google Images adalah sumber trafik utama bakery)
+# Allow: /images/
+# Allow: /assets/
+# Allow: /products/
+
+# Lokasi Peta Situs
+Sitemap: https://starbakery.vercel.app/sitemap.xml
