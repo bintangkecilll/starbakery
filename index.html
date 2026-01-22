@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Star Bakery - Kelezatan Premium</title>
+    <meta name="description" content="Nikmati roti dan kue premium dengan sentuhan kemewahan di Star Bakery.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #D2694E;
+            /* Terracotta Mewah */
+            --bg-cream: #F9F7F2;
+            /* Cream Lembut */
+            --bg-accent: #F2E8E4;
+            /* Pinkish Accent */
+            --dark: #2C2C2C;
+            --gold: #C5A059;
+            --grid-line: rgba(210, 105, 78, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- 1. Background Grid --- */
+        .bg-grid {
+            background-color: var(--bg-cream);
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        /* --- 2. Navbar --- */
+        .navbar {
+            background-color: rgba(249, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: 0.3s;
+        }
+
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin: 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .badge-cart-wrap {
+            position: relative;
+            background: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .badge-cart-wrap:hover {
+            background: var(--primary);
+            color: white !important;
+        }
+
+        .badge-cart-wrap:hover i {
+            color: white !important;
+        }
+
+        .badge-count {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--dark);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* --- 3. Buttons --- */
+        .btn-custom-dark {
+            background-color: var(--dark);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 35px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            box-shadow: 0 5px 15px rgba(44, 44, 44, 0.2);
+            transition: all 0.3s;
+        }
+
+        .btn-custom-dark:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(210, 105, 78, 0.3);
+        }
+
+        .btn-custom-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .btn-custom-primary:hover {
+            background-color: #b05038;
+            box-shadow: 0 5px 15px rgba(210, 105, 78, 0.3);
+        }
+
+        .btn-add-cart {
+            background: white;
+            border: 1px solid var(--grid-line);
+            color: var(--dark);
+            border-radius: 12px;
+            width: 100%;
+            padding: 8px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-add-cart:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: #fff5f2;
+        }
+
+        /* --- 4. Hero Section --- */
+        .hero-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating-img {
+            animation: float 4s ease-in-out infinite;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px rgba(210, 105, 78, 0.1);
+            transition: 0.3s;
+        }
+
+        .floating-img:hover {
+            transform: scale(1.02);
+        }
+
+        .delay-1 {
+            animation-delay: 2s;
+        }
+
+        /* --- 5. Features Section --- */
+        .features-section {
+            padding: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: 0.4s;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(210, 105, 78, 0.15);
+            border-color: var(--primary);
+        }
+
+        .feature-icon-circle {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: 0.4s;
+        }
+
+        .feature-card:hover .feature-icon-circle {
+            background: var(--primary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* --- 6. Products Section --- */
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        .nav-tabs {
+            border: none;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .nav-tabs .nav-link {
+            border: 1px solid transparent;
+            background: white;
+            color: #888;
+            font-size: 0.95rem;
+            margin: 0 8px;
+            border-radius: 50px;
+            padding: 10px 30px;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tabs .nav-link.active,
+        .nav-tabs .nav-link:hover {
+            color: white;
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card {
+            background: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            height: 100%;
+            transition: 0.4s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-img-box {
+            background-color: var(--bg-accent);
+            height: 240px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .product-img-box img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-img-box img {
+            transform: scale(1.1);
+        }
+
+        /* Pagination Buttons */
+        .pagination-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            color: var(--dark);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .pagination-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .pagination-btn:disabled {
+            background: #eee;
+            color: #aaa;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* --- 7. Other Sections --- */
+        .about-section {
+            background-color: white;
+            padding: 0;
+        }
+
+        .about-content {
+            padding: 80px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 500px;
+        }
+
+        .review-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .testimonial-item {
+            background: var(--bg-cream);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), #b05038);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .accordion-item {
+            border: none;
+            background: white;
+            border-radius: 15px !important;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: var(--bg-accent);
+            color: var(--primary);
+        }
+
+        .footer {
+            background-color: white;
+            padding: 80px 0 30px;
+            border-top: 1px solid var(--grid-line);
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-cream);
+            color: var(--dark);
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container px-lg-4">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="fas fa-star text-warning fs-3"></i>
+                <div style="line-height: 1;">
+                    <span style="color: var(--dark); font-weight: 800; font-size: 1.4rem;">STAR</span>
+                    <span style="color: var(--primary); font-weight: 700;">BAKERY</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="cart.html" class="badge-cart-wrap">
+                    <i class="fas fa-shopping-bag fs-5"></i>
+                    <span class="badge-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section bg-grid">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 d-none d-lg-block text-center">
+                    <img src="img/hero2.jpg" class="floating-img img-fluid"
+                        alt="Buns">
+                </div>
+
+                <div class="col-lg-6 text-center position-relative z-2">
+                    <span
+                        class="badge bg-white text-primary border border-primary px-3 py-2 rounded-pill mb-3 fw-bold shadow-sm text-uppercase ls-1">Fresh
+                        From The Oven</span>
+                    <h1 class="hero-title">Keajaiban Rasa <br>Di Setiap Gigitan</h1>
+                    <p class="hero-subtitle">Kami menghadirkan roti dan kue premium dengan bahan berkualitas bintang
+                        lima. Dibuat dengan cinta setiap hari untuk Anda.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="products.html" class="btn btn-custom-dark shadow-lg">Pesan Sekarang</a>
+                        <a href="about.html" class="btn btn-outline-dark px-4 py-2 rounded-pill fw-bold"
+                            style="border-width: 2px;">Tentang Kami</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 d-none d-lg-block text-center">
+                    <img src="img/hero1.jpg"
+                        class="floating-img delay-1 img-fluid" alt="Pastry">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section bg-transparent">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h6 class="text-uppercase fw-bold mb-2">Dibuat Dengan Cinta</h6>
+                        <small class="text-muted">Setiap adonan disentuh dengan passion.</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle"><i class="fas fa-wheat"></i></div>
+                        <h6 class="text-uppercase fw-bold mb-2">Bahan Premium</h6>
+                        <small class="text-muted">Tepung & mentega kualitas import.</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle"><i class="fas fa-certificate"></i></div>
+                        <h6 class="text-uppercase fw-bold mb-2">Menu Inovatif</h6>
+                        <small class="text-muted">Resep klasik dengan sentuhan modern.</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle"><i class="fas fa-smile-beam"></i></div>
+                        <h6 class="text-uppercase fw-bold mb-2">Layanan Terbaik</h6>
+                        <small class="text-muted">Kepuasan pelanggan adalah prioritas.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-grid" id="products">
+        <div class="container pt-5">
+            <h2 class="section-title">Menu Spesial Kami</h2>
+
+            <ul class="nav nav-tabs" id="menuTabs">
+                <li class="nav-item"><button class="nav-link active" onclick="filterProduct('all')">Semua</button></li>
+                <li class="nav-item"><button class="nav-link" onclick="filterProduct('buns')">Roti</button></li>
+                <li class="nav-item"><button class="nav-link" onclick="filterProduct('cakes')">Kue</button></li>
+                <li class="nav-item"><button class="nav-link" onclick="filterProduct('cookies')">Kukis</button></li>
+            </ul>
+
+            <div class="row g-4" id="productList">
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center gap-4 mt-5 pagination-container">
+                <button class="pagination-btn" id="prevBtn" onclick="changePage(-1)"><i
+                        class="fas fa-arrow-left"></i></button>
+                <span class="fw-bold text-muted" id="pageIndicator">Halaman 1</span>
+                <button class="pagination-btn" id="nextBtn" onclick="changePage(1)"><i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 p-0">
+                    <img src="img/about.webp" alt="Kitchen"
+                        class="about-img">
+                </div>
+                <div class="col-md-6">
+                    <div class="about-content">
+                        <h5 class="text-primary fw-bold text-uppercase mb-2">Tentang Kami</h5>
+                        <h2 class="mb-4 display-6 fw-bold">Kami Memanggang Kebahagiaan.</h2>
+                        <p class="mb-3 text-muted lead">"Rasa yang tidak pernah berbohong."</p>
+                        <p class="mb-4 text-muted">Di Star Bakery, kami percaya bahwa kue yang enak dimulai dari bahan
+                            terbaik. Kami hanya menggunakan tepung gandum pilihan, mentega asli, dan buah segar tanpa
+                            pengawet buatan.</p>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-custom-dark">Layanan Kami</button>
+                            <button class="btn btn-outline-dark px-4 py-2 rounded-3 fw-bold">Selengkapnya</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni" class="review-section">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Mereka?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-item h-100">
+                        <div class="mb-3 text-warning">★★★★★</div>
+                        <p class="text-muted fst-italic">"Rotinya sangat lembut dan wanginya enak sekali. Cocok untuk
+                            sarapan keluarga."</p>
+                        <h6 class="fw-bold mt-3">- Andi Pratama</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-item h-100">
+                        <div class="mb-3 text-warning">★★★★★</div>
+                        <p class="text-muted fst-italic">"Kue ulang tahunnya cantik dan rasanya premium. Tidak terlalu
+                            manis, pas di lidah."</p>
+                        <h6 class="fw-bold mt-3">- Siti Nurhaliza</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-item h-100">
+                        <div class="mb-3 text-warning">★★★★★</div>
+                        <p class="text-muted fst-italic">"Cookies coklatnya juara! Anak-anak sangat suka. Pengiriman
+                            juga cepat dan aman."</p>
+                        <h6 class="fw-bold mt-3">- Budi Santoso</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="mb-3 fw-bold display-5">Siap Mencicipi Keajaiban Rasa?</h2>
+            <p class="mb-4 text-white-50 fs-5">Jangan biarkan hari Anda berlalu tanpa kelezatan Star Bakery.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="products.html" class="btn btn-light text-primary fw-bold rounded-pill px-5 py-3 shadow">Lihat
+                    Menu</a>
+                <a href="https://wa.me/6281234567890" target="_blank"
+                    class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold">Hubungi WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-grid">
+        <div class="container py-lg-4">
+            <h2 class="section-title">FAQ</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-flush" id="accordionFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne">Berapa lama ketahanan
+                                    roti?</button></h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show">
+                                <div class="accordion-body text-muted">Roti kami bertahan 3-4 hari di suhu ruang karena
+                                    tanpa pengawet.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo">Apakah bisa kirim luar
+                                    kota?</button></h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse">
+                                <div class="accordion-body text-muted">Untuk Cookies bisa seluruh Indonesia. Roti basah
+                                    hanya area lokal.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree">Apakah Halal?</button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse">
+                                <div class="accordion-body text-muted">Ya, 100% Halal. Bahan bersertifikasi dan tanpa
+                                    alkohol.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <i class="fas fa-star text-warning fs-4"></i>
+                        <h4 class="m-0 fw-bold">STAR BAKERY</h4>
+                    </div>
+                    <p class="text-muted pe-lg-4">Menghadirkan pengalaman menikmati roti terbaik dengan standar bintang
+                        lima.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Navigasi</h5>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="products.html">Menu</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Produk Populer</h5>
+                    <ul>
+                        <li><a href="#">Paket Keluarga</a></li>
+                        <li><a href="#">Choco Cookies</a></li>
+                        <li><a href="#">Red Velvet</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Hubungi Kami</h5>
+                    <ul class="text-muted small">
+                        <li class="d-flex mb-3"><i class="fas fa-map-marker-alt mt-1 me-3 text-primary"></i> Jl. Bintang
+                            Raya No. 88, Jakarta</li>
+                        <li class="d-flex mb-3"><i class="fas fa-phone mt-1 me-3 text-primary"></i> 0812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-4 border-top"><small class="text-muted">&copy; 2024 Star Bakery.</small>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow-lg">
+                <div class="modal-header bg-dark text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold fs-6 text-uppercase">Form Pemesanan</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="waOrderForm">
+                        <input type="text" class="form-control mb-3" id="productNameInput" readonly>
+                        <input type="text" class="form-control mb-3" id="customerName" required placeholder="Nama Anda">
+                        <input type="number" class="form-control mb-3" id="orderQty" value="1" min="1" required>
+                        <textarea class="form-control mb-3" id="orderNote" placeholder="Catatan..."></textarea>
+                        <button type="submit" class="btn btn-custom-primary w-100 shadow">Kirim WA</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="cartToast" class="toast align-items-center text-white bg-dark border-0 rounded-3 shadow" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"><i class="fas fa-check-circle me-2"></i> Produk ditambahkan!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="floating.js"></script>
+
+    <script>
+        const products = [
+            { name: "Paket Roti Keluarga", price: "Rp 150.000", rawPrice: 150000, cat: "buns", img: "img/roti3.webp" },
+            { name: "Premium Choco Cookies", price: "Rp 85.000", rawPrice: 85000, cat: "cookies", img: "img/roti4.webp" },
+            { name: "Red Velvet Cake", price: "Rp 250.000", rawPrice: 250000, cat: "cakes", img: "img/roti5.webp" },
+            { name: "Butter Croissant", price: "Rp 35.000", rawPrice: 35000, cat: "buns", img: "img/roti6.webp" },
+            { name: "New York Cheesecake", price: "Rp 280.000", rawPrice: 280000, cat: "cakes", img: "img/roti7.webp" },
+            { name: "Sweet Brownies", price: "Rp 95.000", rawPrice: 95000, cat: "cakes", img: "img/roti8.webp" },
+            { name: "Garlic Cheese Bread", price: "Rp 40.000", rawPrice: 40000, cat: "buns", img: "img/roti9.webp" },
+            { name: "Oatmeal Cookies", price: "Rp 75.000", rawPrice: 75000, cat: "cookies", img: "img/roti10.webp" },
+            { name: "Fruit Tart", price: "Rp 180.000", rawPrice: 180000, cat: "cakes", img: "img/roti11.webp" },
+            { name: "Sourdough Bread", price: "Rp 50.000", rawPrice: 50000, cat: "buns", img: "img/roti12.webp" },
+            { name: "Macarons (Box of 6)", price: "Rp 120.000", rawPrice: 120000, cat: "cookies", img: "img/roti4.webp" },
+            { name: "Donut Glaze (Box of 12)", price: "Rp 100.000", rawPrice: 100000, cat: "buns", img: "img/roti3.webp" }
+        ];
+
+        let currentCategory = 'all';
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let filteredProducts = products;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartBadge();
+        });
+
+        function filterProduct(category) {
+            currentCategory = category;
+            currentPage = 1;
+            document.querySelectorAll('.nav-tabs .nav-link').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            if (category === 'all') { filteredProducts = products; } else { filteredProducts = products.filter(p => p.cat === category); }
+            renderProducts();
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('productList');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = filteredProducts.slice(start, end);
+
+            const paginationControls = document.querySelector('.pagination-container');
+            if (paginationControls) paginationControls.style.display = (filteredProducts.length <= itemsPerPage) ? 'none' : 'flex';
+
+            paginatedItems.forEach(p => {
+                const html = `
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-img-box"><img src="${p.img}" alt="${p.name}"></div>
+                        <h5 class="fw-bold mb-1">${p.name}</h5>
+                        <p class="text-primary fw-bold mb-3">${p.price}</p>
+                        <div class="row g-2">
+                            <div class="col-4"><button class="btn btn-add-cart h-100 m-0" onclick="addItemToCart('${p.name}', ${p.rawPrice}, '${p.img}', '${p.price}')"><i class="fas fa-cart-plus"></i></button></div>
+                            <div class="col-8"><button class="btn btn-custom-primary m-0" onclick="window.open('https://wa.me/6281234567890?text=Pesan ${p.name}', '_blank')">Pesan</button></div>
+                        </div>
+                    </div>
+                </div>`;
+                container.innerHTML += html;
+            });
+
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            if (document.getElementById('pageIndicator')) document.getElementById('pageIndicator').innerText = `Halaman ${currentPage}`;
+            if (document.getElementById('prevBtn')) document.getElementById('prevBtn').disabled = currentPage === 1;
+            if (document.getElementById('nextBtn')) document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+        }
+
+        function changePage(delta) {
+            currentPage += delta;
+            renderProducts();
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- FUNGSI KERANJANG UTAMA (REVISI) ---
+        function addItemToCart(name, rawPrice, img, priceStr) {
+            // 1. Ambil Data Cart
+            let cart = JSON.parse(localStorage.getItem('starBakeryCart')) || [];
+
+            // 2. Cek apakah barang sudah ada
+            let existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.qty++; // Tambah jumlah
+            } else {
+                // Tambah Item Baru dengan data lengkap
+                cart.push({
+                    name: name,
+                    rawPrice: rawPrice,
+                    price: priceStr,
+                    img: img,
+                    qty: 1
+                });
+            }
+
+            // 3. Simpan Kembali ke LocalStorage
+            localStorage.setItem('starBakeryCart', JSON.stringify(cart));
+
+            // 4. Update Badge
+            updateCartBadge();
+
+            // 5. Tampilkan Notifikasi
+            const toastEl = document.getElementById('cartToast');
+            if (toastEl) { const toast = new bootstrap.Toast(toastEl); toast.show(); }
+        }
+
+        function updateCartBadge() {
+            let cart = JSON.parse(localStorage.getItem('starBakeryCart')) || [];
+            let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+            // Update UI
+            const badge = document.getElementById('cartCount');
+            if (badge) badge.innerText = totalQty;
+
+            // Simpan count khusus untuk akses cepat (opsional)
+            localStorage.setItem('starBakeryCartCount', totalQty);
+        }
+    </script>
+</body>
+
+</html>

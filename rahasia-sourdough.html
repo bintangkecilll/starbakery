@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Panduan Lengkap Membuat Roti Sourdough untuk Pemula - Star Bakery</title>
+    <meta name="description" content="Pelajari cara membuat roti sourdough premium dari nol. Panduan langkah demi langkah, tips fermentasi, dan rahasia dapur Star Bakery.">
+    <meta name="keywords" content="sourdough, resep roti, ragi alami, artisan bread, star bakery tips">
+    <meta name="author" content="Budi Santoso">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Panduan Lengkap Membuat Roti Sourdough untuk Pemula">
+    <meta property="og:description" content="Rahasia dapur Star Bakery terungkap. Buat sourdough sempurna di rumah Anda.">
+    <meta property="og:image" content="https://placehold.co/1200x630/D2694E/white?text=Sourdough+Guide">
+    <meta property="og:url" content="https://www.starbakery.com/rahasia-sourdough.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Panduan Lengkap Membuat Roti Sourdough untuk Pemula",
+      "image": "https://placehold.co/1200x630/D2694E/white?text=Sourdough+Guide",
+      "author": {
+        "@type": "Person",
+        "name": "Budi Santoso"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Star Bakery",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://placehold.co/100x100"
+        }
+      },
+      "datePublished": "2024-01-20",
+      "dateModified": "2024-01-22"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #D2694E; --bg-cream: #F9F7F2; --bg-accent: #F2E8E4;
+            --dark: #2C2C2C; --grid-line: rgba(210, 105, 78, 0.1);
+        }
+
+        body { font-family: 'Poppins', sans-serif; background-color: #fff; color: var(--dark); overflow-x: hidden; }
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+        /* Navbar & Global */
+        .navbar { background-color: rgba(249, 247, 242, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 1rem 0; }
+        .nav-link { color: var(--dark) !important; font-weight: 500; margin: 0 10px; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem; }
+        .nav-link:hover { color: var(--primary) !important; }
+        .badge-cart-wrap { position: relative; background: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: var(--dark); transition: 0.3s; }
+        .badge-count { position: absolute; top: -2px; right: -2px; background: var(--dark); color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem; font-weight: bold; }
+        .footer { background: white; padding: 80px 0 30px; border-top: 1px solid var(--grid-line); }
+        .footer-social a { display: inline-flex; width: 36px; height: 36px; border-radius: 50%; background: var(--bg-cream); color: var(--dark); align-items: center; justify-content: center; margin-right: 10px; text-decoration: none; transition: 0.3s; }
+        .footer-social a:hover { background: var(--primary); color: white; }
+
+        /* --- Article Specific Styles --- */
+        .article-header { padding: 40px 0 20px; }
+        .breadcrumb { background: transparent; padding: 0; font-size: 0.85rem; }
+        .breadcrumb-item a { color: #999; text-decoration: none; }
+        .breadcrumb-item.active { color: var(--primary); font-weight: 600; }
+        
+        .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
+        .article-meta { color: #666; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .article-meta span { margin-right: 20px; }
+        .article-meta i { color: var(--primary); margin-right: 5px; }
+
+        .main-image { width: 100%; height: auto; border-radius: 20px; margin-bottom: 10px; }
+        .img-caption { text-align: center; color: #888; font-size: 0.85rem; font-style: italic; margin-bottom: 40px; }
+
+        /* Content Typography */
+        .article-content { font-size: 1.05rem; line-height: 1.8; color: #444; }
+        .article-content h2 { font-size: 1.8rem; font-weight: 700; margin-top: 40px; margin-bottom: 20px; color: var(--dark); position: relative; padding-left: 20px; }
+        .article-content h2::before { content: ''; position: absolute; left: 0; top: 5px; height: 30px; width: 5px; background: var(--primary); border-radius: 5px; }
+        .article-content h3 { font-size: 1.4rem; font-weight: 600; margin-top: 30px; margin-bottom: 15px; }
+        .article-content p { margin-bottom: 20px; }
+
+        /* Blockquote */
+        .custom-blockquote {
+            background-color: var(--bg-cream); border-left: 5px solid var(--primary);
+            padding: 30px; margin: 40px 0; border-radius: 0 15px 15px 0;
+            font-style: italic; color: #555; font-size: 1.1rem;
+        }
+
+        /* TOC Box */
+        .toc-container {
+            background: #fff; border: 1px solid #eee; border-radius: 15px;
+            padding: 25px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            position: sticky; top: 100px; /* Sticky on Desktop */
+        }
+        .toc-title { font-weight: 700; margin-bottom: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .toc-list { list-style: none; padding: 0; margin: 0; max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .toc-list.open { max-height: 1000px; } /* Expand */
+        .toc-list li { margin-bottom: 10px; }
+        .toc-list li a { text-decoration: none; color: #666; font-size: 0.9rem; transition: 0.3s; }
+        .toc-list li a:hover { color: var(--primary); padding-left: 5px; }
+        .toc-list li.sub-item { padding-left: 20px; border-left: 1px solid #eee; }
+
+        /* Read Also Box */
+        .read-also {
+            background: var(--bg-accent); padding: 20px; border-radius: 10px;
+            margin: 30px 0; border-left: 4px solid var(--primary);
+        }
+        .read-also a { color: var(--dark); font-weight: 700; text-decoration: none; }
+        .read-also a:hover { color: var(--primary); text-decoration: underline; }
+
+        /* Promo Banner */
+        .promo-banner {
+            display: block; margin: 40px 0; border-radius: 15px; overflow: hidden;
+            position: relative; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .promo-banner:hover { transform: scale(1.02); }
+        .promo-banner img { width: 100%; height: auto; }
+
+        /* Author Bio */
+        .author-box {
+            background: #fff; border: 1px solid #eee; padding: 30px; border-radius: 15px;
+            margin-top: 60px; display: flex; align-items: center; gap: 20px;
+        }
+        .author-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+        
+        /* Share Buttons */
+        .share-area { margin-top: 40px; }
+        .btn-share {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%; color: white;
+            margin-right: 10px; text-decoration: none; transition: 0.3s;
+        }
+        .share-wa { background: #25D366; }
+        .share-fb { background: #1877F2; }
+        .share-tw { background: #1DA1F2; }
+        .btn-share:hover { opacity: 0.8; transform: translateY(-3px); color: white; }
+
+        /* Related Articles */
+        .related-section { background: var(--bg-cream); padding: 60px 0; margin-top: 60px; }
+        .related-card { background: white; border: none; border-radius: 15px; overflow: hidden; height: 100%; transition: 0.3s; }
+        .related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .related-img { height: 200px; object-fit: cover; width: 100%; }
+        .related-body { padding: 20px; }
+        .related-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+        .related-title a { text-decoration: none; color: var(--dark); }
+        .related-link { color: var(--primary); font-weight: 600; font-size: 0.85rem; text-decoration: none; text-transform: uppercase; }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .toc-container { position: static; margin-bottom: 30px; }
+            .article-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html" style="color: var(--primary);">
+                <i class="fas fa-star"></i> STAR BAKERY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimoni">Ulasan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="cart.html" class="badge-cart-wrap">
+                    <i class="fas fa-shopping-bag fs-5"></i>
+                    <span class="badge-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container article-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Rahasia Sourdough</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg-4 order-lg-2">
+                <div class="toc-container">
+                    <div class="toc-title" onclick="toggleToc()">
+                        Daftar Isi <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="toc-list open" id="tocList">
+                        </ul>
+                </div>
+
+                <div class="d-none d-lg-block sticky-top" style="top: 350px;">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Star%20Bakery,%20saya%20tertarik%20dengan%20starter%20kit%20sourdough" target="_blank" class="promo-banner">
+                        <img src="https://placehold.co/400x600/D2694E/white?text=PROMO+STARTER+KIT%0A+Klik+di+Sini" alt="Promo WA">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 order-lg-1">
+                <h1 class="article-title">Panduan Lengkap Membuat Roti Sourdough untuk Pemula: Rahasia Dapur Star Bakery</h1>
+                
+                <div class="article-meta">
+                    <span><i class="far fa-user"></i> Budi Santoso (Head Baker)</span>
+                    <span><i class="far fa-calendar"></i> 20 Januari 2026</span>
+                    <span><i class="far fa-folder"></i> Tips Baking</span>
+                </div>
+
+                <img src="https://placehold.co/800x500/EBCBC3/333?text=Sourdough+Bread" alt="Roti Sourdough Fresh" class="main-image">
+                <div class="img-caption">Roti Sourdough dengan kulit renyah dan tekstur dalam yang lembut (Sumber: Dokumen Pribadi Star Bakery)</div>
+
+                <div class="article-content">
+                    <p>Membuat roti sourdough seringkali dianggap sebagai "puncak gunung" bagi para pembuat roti rumahan. Prosesnya yang panjang, melibatkan fermentasi alami, dan teknik khusus seringkali membuat pemula merasa terintimidasi. Namun, di Star Bakery, kami percaya bahwa siapa pun bisa membuat roti artisan yang lezat di rumah dengan panduan yang tepat.</p>
+
+                    <p>Dalam artikel ini, kami akan membongkar rahasia dapur kami. Bukan hanya resep, tapi filosofi dan teknik yang membuat roti sourdough kami menjadi favorit pelanggan. Siapkan tepung Anda, karena kita akan memulai perjalanan rasa yang menakjubkan.</p>
+
+                    <h2>Apa Itu Sourdough?</h2>
+                    <p>Berbeda dengan roti konvensional yang menggunakan ragi instan komersial, sourdough mengandalkan <strong>ragi alami (wild yeast)</strong> dan bakteri asam laktat yang dibiakkan melalui campuran tepung dan air. Campuran hidup ini disebut sebagai <em>Starter</em> atau <em>Levain</em>.</p>
+                    <p>Proses fermentasi yang lambat (bisa mencapai 24-48 jam) inilah yang memberikan sourdough karakteristik uniknya: rasa sedikit asam yang kompleks, kulit (crust) yang tebal dan renyah, serta bagian dalam (crumb) yang berlubang-lubang dan kenyal.</p>
+
+                    <div class="read-also">
+                        Baca Juga: <a href="#">5 Manfaat Roti Gandum bagi Kesehatan Pencernaan</a>
+                    </div>
+
+                    <h2>Persiapan Bahan dan Alat</h2>
+                    <p>Sebelum memulai, pastikan Anda memiliki peralatan dasar. Anda tidak perlu mixer mahal, karena sourdough terbaik dibuat dengan tangan.</p>
+                    <ul>
+                        <li><strong>Tepung Protein Tinggi:</strong> Ini kunci utama. Gluten yang kuat diperlukan untuk menahan gas fermentasi.</li>
+                        <li><strong>Timbangan Digital:</strong> Dalam baking, presisi adalah segalanya. Jangan gunakan takaran cup/sendok.</li>
+                        <li><strong>Scraper:</strong> Untuk memotong dan membentuk adonan.</li>
+                        <li><strong>Banneton (Keranjang Fermentasi):</strong> Agar roti behasil mempertahankan bentuknya saat mengembang.</li>
+                        <li><strong>Dutch Oven / Panci Besi:</strong> Untuk meniru oven uap profesional di rumah.</li>
+                    </ul>
+
+                    <a href="https://wa.me/6281234567890" class="promo-banner d-lg-none">
+                        <img src="https://placehold.co/600x300/D2694E/white?text=BELI+STARTER+KIT+SEKARANG" alt="Promo WA">
+                    </a>
+
+                    <h2>Membuat Starter: Jantung Sourdough</h2>
+                    <p>Starter adalah "bayi" yang harus Anda rawat. Proses ini memakan waktu sekitar 5-7 hari hingga starter siap digunakan (aktif).</p>
+                    
+                    <h3>Hari 1-7: Proses Fermentasi</h3>
+                    <p>Campurkan tepung gandum utuh dan air dengan perbandingan 1:1. Biarkan di suhu ruang. Setiap hari, buang sebagian adonan dan beri makan lagi dengan tepung dan air baru. Pada hari ke-7, starter Anda akan bergelembung aktif dan berbau harum seperti tape atau yogurt.</p>
+
+                    <blockquote class="custom-blockquote">
+                        "Kunci keberhasilan sourdough 70% terletak pada kekuatan Starter. Jika starter Anda belum naik 2x lipat dalam 4 jam, jangan memaksakan diri membuat roti." — Chef Budi, Star Bakery.
+                    </blockquote>
+
+                    <h2>Proses Pembuatan Adonan (Autolyse)</h2>
+                    <p>Teknik pertama yang kami gunakan di Star Bakery adalah <em>Autolyse</em>. Ini adalah proses mencampur tepung dan air saja, lalu didiamkan selama 1-2 jam sebelum ragi dan garam dimasukkan. Proses ini memungkinkan gluten terbentuk secara pasif dan enzim mulai memecah pati menjadi gula.</p>
+                    <p>Setelah autolyse, masukkan starter aktif dan garam. Uleni sebentar hingga tercampur rata. Adonan akan terasa lengket, tapi jangan tergoda menambahkan tepung!</p>
+
+                    <div class="read-also">
+                        Baca Juga: <a href="#">Cara Menyimpan Roti Sourdough Agar Tahan Lama</a>
+                    </div>
+
+                    <h2>Teknik Folding dan Proofing</h2>
+                    <p>Lupakan menguleni roti seperti mencuci baju. Sourdough membutuhkan kelembutan. Kami menggunakan teknik <em>Stretch and Fold</em> (Tarik dan Lipat).</p>
+                    <p>Lakukan stretch and fold setiap 30 menit sebanyak 4-6 kali selama masa <em>Bulk Fermentation</em>. Ini akan memperkuat struktur gluten tanpa membuang gas yang sudah terbentuk.</p>
+
+                    <figure class="figure my-4 w-100">
+                        <img src="https://placehold.co/800x400/F2E8E4/333?text=Teknik+Folding" class="figure-img img-fluid rounded-4 w-100" alt="Teknik Folding">
+                        <figcaption class="figure-caption text-center">Teknik Stretch and Fold untuk memperkuat gluten.</figcaption>
+                    </figure>
+
+                    <h3>Mengapa Folding Penting?</h3>
+                    <p>Folding membantu meratakan suhu adonan dan mendistribusikan ragi. Selain itu, teknik ini menciptakan lapisan-lapisan gluten yang kuat yang nantinya akan menahan udara saat dipanggang, menciptakan lubang-lubang estetis pada roti.</p>
+
+                    <h2>Memanggang dengan Sempurna</h2>
+                    <p>Panaskan oven dan Dutch Oven Anda pada suhu maksimum (sekitar 250°C) selama 1 jam. Masukkan adonan yang sudah dicetak (scoring) ke dalam Dutch Oven panas, tutup, dan panggang selama 20 menit.</p>
+                    <p>Tutup Dutch Oven berfungsi menahan uap air yang keluar dari adonan, menjaga kulit roti tetap lunak di awal pemanggangan agar roti bisa mengembang maksimal (oven spring). Setelah 20 menit, buka tutupnya, turunkan suhu ke 220°C, dan panggang hingga kulit berwarna coklat keemasan gelap.</p>
+
+                    <h2>Kesimpulan</h2>
+                    <p>Membuat sourdough adalah perpaduan antara sains dan seni. Kegagalan di awal adalah hal biasa. Roti mungkin bantat, terlalu asam, atau hangus. Namun, dengan latihan dan memahami karakteristik starter Anda, Anda akan segera menghasilkan roti kualitas bakery dari dapur rumah Anda sendiri.</p>
+                    <p>Ingin mencicipi standar rasa sourdough terbaik sebelum membuatnya sendiri? Pesan Sourdough Artisan kami di menu produk.</p>
+
+                    <div class="mt-5">
+                        <h3 class="mb-4">Pertanyaan Umum (FAQ)</h3>
+                        <div class="accordion" id="faqArticle">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        Kenapa roti saya bantat dan tidak mengembang?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqArticle">
+                                    <div class="accordion-body">
+                                        Penyebab utamanya biasanya adalah starter yang belum cukup aktif/kuat, atau waktu fermentasi (proofing) yang kurang lama (underproofed).
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Apakah bisa membuat sourdough tanpa Dutch Oven?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqArticle">
+                                    <div class="accordion-body">
+                                        Bisa. Anda bisa menggunakan loyang biasa, namun Anda perlu menciptakan uap di dalam oven dengan cara menaruh loyang berisi air panas di rak bawah oven.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="share-area">
+                        <span class="fw-bold me-3">Bagikan Artikel:</span>
+                        <a href="https://wa.me/?text=Cek%20artikel%20keren%20ini%20tentang%20Sourdough!" target="_blank" class="btn-share share-wa"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=#" target="_blank" class="btn-share share-fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=#" target="_blank" class="btn-share share-tw"><i class="fab fa-twitter"></i></a>
+                    </div>
+
+                    <div class="author-box">
+                        <img src="https://placehold.co/100x100/333/fff?text=BS" alt="Budi Santoso" class="author-img">
+                        <div>
+                            <h5 class="fw-bold m-0">Budi Santoso</h5>
+                            <small class="text-primary fw-bold text-uppercase">Head Baker Star Bakery</small>
+                            <p class="text-muted small mt-2 m-0">Berpengalaman lebih dari 15 tahun di dunia pastry & bakery. Mencintai proses fermentasi alami dan berdedikasi membagikan ilmu baking kepada komunitas.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="related-section">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Artikel Terkait</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-4">
+                                <img src="https://placehold.co/300x300/F2E8E4/333?text=Roti+Gandum" class="related-img" alt="Roti Gandum">
+                            </div>
+                            <div class="col-8">
+                                <div class="related-body">
+                                    <h5 class="related-title"><a href="#">Manfaat Roti Gandum Utuh bagi Kesehatan Jantung</a></h5>
+                                    <p class="text-muted small mb-2">Pelajari kenapa gandum utuh lebih baik daripada tepung putih...</p>
+                                    <a href="#" class="related-link">Baca Selengkapnya <i class="fas fa-arrow-right small"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-4">
+                                <img src="https://placehold.co/300x300/2C2C2C/fff?text=Croissant" class="related-img" alt="Croissant">
+                            </div>
+                            <div class="col-8">
+                                <div class="related-body">
+                                    <h5 class="related-title"><a href="#">Sejarah Croissant: Bukan Asli dari Prancis?</a></h5>
+                                    <p class="text-muted small mb-2">Fakta mengejutkan tentang asal usul pastry paling populer di dunia...</p>
+                                    <a href="#" class="related-link">Baca Selengkapnya <i class="fas fa-arrow-right small"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <i class="fas fa-star text-warning fs-4"></i>
+                        <h4 class="m-0 fw-bold">STAR BAKERY</h4>
+                    </div>
+                    <p class="text-muted pe-lg-4">Menghadirkan pengalaman menikmati roti terbaik dengan standar bintang lima.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Navigasi</h5>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="products.html">Menu</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Produk Populer</h5>
+                    <ul>
+                        <li><a href="products.html">Paket Keluarga</a></li>
+                        <li><a href="products.html">Choco Cookies</a></li>
+                        <li><a href="products.html">Red Velvet</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Hubungi Kami</h5>
+                    <ul class="text-muted small">
+                        <li class="d-flex mb-3"><i class="fas fa-map-marker-alt mt-1 me-3 text-primary"></i> Jl. Bintang Raya No. 88, Jakarta</li>
+                        <li class="d-flex mb-3"><i class="fas fa-phone mt-1 me-3 text-primary"></i> 0812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-4 border-top"><small class="text-muted">&copy; 2024 Star Bakery.</small></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="floating.js"></script>
+
+    <script>
+        // 1. Sync Cart Badge
+        document.addEventListener('DOMContentLoaded', () => {
+            let count = localStorage.getItem('starBakeryCartCount') || 0;
+            const badge = document.getElementById('cartCount');
+            if(badge) badge.innerText = count;
+            
+            generateTOC();
+        });
+
+        // 2. Auto Generate TOC
+        function generateTOC() {
+            const tocList = document.getElementById('tocList');
+            const headers = document.querySelectorAll('.article-content h2, .article-content h3');
+            
+            headers.forEach((header, index) => {
+                // Berikan ID ke header jika belum ada
+                if (!header.id) {
+                    header.id = 'section-' + index;
+                }
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + header.id;
+                a.innerText = header.innerText;
+                
+                // Indentasi untuk H3
+                if (header.tagName === 'H3') {
+                    li.classList.add('sub-item');
+                }
+
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+
+        // Toggle TOC Visibility
+        function toggleToc() {
+            const list = document.getElementById('tocList');
+            list.classList.toggle('open');
+            // Toggle Height logic via CSS class 'open'
+            if(list.style.maxHeight){
+                list.style.maxHeight = null;
+            } else {
+                list.style.maxHeight = list.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
